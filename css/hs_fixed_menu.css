@@ -1,0 +1,117 @@
+.fixed-filter-menu{
+    width: 20%;
+    background-color: rgb(250, 193, 107);
+    margin-top: -85px;
+    margin-left: 10px;
+    border:  2px solid #fa7508;
+    border-radius: 10px;
+    text-align: center;
+    position: fixed;  
+    height: 70%;  
+   /* background-image: url(../Images/hs_background.jpg);
+    background-size: 200%;
+    background-repeat: no-repeat;
+    background-position:center;*/
+}
+
+@media only screen and (max-width: 845px), only screen and (max-height: 538px)
+{
+    .fixed-filter-menu{
+        visibility: hidden;
+    }
+}
+#side_nav{
+    width: 90%;
+    margin-top: -30px;
+}
+
+#class, #rarity,#expansions{
+    /*min-width: 50px;*/
+    width: 40%;
+    min-height: 30px;
+    text-align: center;
+    color: #777;
+    box-shadow: 1px 2px 10px -2px rgba(0,0,0,0.3);
+    border-radius: 3px;
+    margin: 5px;
+    cursor:pointer;
+    font-family: 'Nunito', sans-serif;
+  }
+
+  .form-style input:hover:not(#submit){
+    background-color: rgb(253, 249, 226);
+    transition: .5s ease;
+  }
+  .form-style select:hover{
+    background-color: rgb(253, 249, 226);
+    transition: .5s ease;
+  }
+
+  .form-style{
+    margin:5px auto;
+    /*max-width: 400px;*/
+   padding: 45px 12px 10px 12px;
+    font: 13px "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  }
+
+  .form-style li {
+    padding: 0;
+    display: block;
+    list-style: none;
+    margin: 20px 0 0 0;
+}
+
+.form-style select{
+    display: inline-block;
+    font-weight: bold;
+    font-size: 2vh;
+    font-size: 1vw;
+}
+
+#cardName,#cost{
+    width: 40%;
+    min-height: 30px;
+    text-align: center;
+    color: #777;
+    box-shadow: 1px 2px 10px -2px rgba(0,0,0,0.3);
+    border-radius: 3px;
+    margin: 5px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+    font-size: 2vh;
+    font-size: 1vw;
+}
+
+#submit{
+    width: 40%;
+    min-height: 30px;
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+    font-size: 2vh;
+    font-size: 1vw;
+    box-shadow: 1px 2px 10px -2px rgba(0,0,0,0.3);
+    margin: 5px;
+}
+
+#cardName::-webkit-input-placeholder{
+    padding-left: 0px;
+}
+#cost::-webkit-input-placeholder{
+    padding-left: 20%;
+}
+#cost{
+    background-image: url('../Images/cristal_mana.png');
+    background-size: 45%;
+    background-position: -5px; 
+    background-repeat: no-repeat;
+    font-size: 2vh;
+    font-size: 1vw;
+}
+
+
+
+
+
+  
+

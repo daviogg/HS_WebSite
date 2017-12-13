@@ -1,0 +1,75 @@
+ @import url('https://fonts.googleapis.com/css?family=Spectral+SC');
+ @import url('https://fonts.googleapis.com/css?family=Nunito');
+
+body{
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+   font-family: 'Nunito', sans-serif;
+   background-color: rgb(252, 221, 186);
+}
+.image{
+    content:url(../Images/Hearthstone_Logo.png);
+    border: none;
+}
+.flex-header{
+    display: flex;
+    margin: 10px;
+    padding:10px;
+    background-color: rgb(245, 188, 127);
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+.flex-header>div{
+    background-color:rgb(245, 188, 127);
+    width: 8%;
+    margin: 10px;
+    text-align: center;
+    /*line-height: 110px;*/
+  }
+
+  .flex-header>#search_div{
+      width:15%;
+  }
+
+#search {
+    width: 70%;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+   /*margin-top: 60px;*/
+    font-size: 3vh;
+    font-size: 1vw;
+    background-color: white;
+    background-image: url('../Images/Search.png');
+    background-size: 15%;
+    background-position: 0; 
+    background-repeat: no-repeat;
+    padding: 5px 10px 6px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+#titleSite{
+    color: #dc694b;
+    font-family:  'Spectral SC', serif;
+    font-size: 7vh;
+    font-size: 3vw;
+    width: 40%;
+}
+#search:focus {
+    width: 100%;
+}
+
+.helloCards{
+    width: 20%;
+    margin-left: 75vw;
+    position: fixed;  
+    height: 70%;    
+}
+
+.imgCardClass{
+    width: 90%;
+    margin-left: 2vw;
+}

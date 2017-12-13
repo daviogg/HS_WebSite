@@ -1,0 +1,78 @@
+
+
+.flex-characters{
+    display: flex;
+    margin: 10px;
+    padding:10px;
+    background-color: rgb(252, 221, 186);
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;     
+}
+
+.flex-characters>div{
+    background-color:rgb(252, 221, 186);
+    width: 20%;
+    margin: 5px;
+    text-align: center;
+    line-height: 110px;
+    width: 4.5%;
+  }
+
+
+#all{
+    content:url(../Images/Hearthstone_allClass.png);
+    cursor: pointer;
+    border:none;
+}
+#druid{
+    content:url(../Images/druid_icon.png);
+    cursor: pointer;
+    border: none;
+}
+#hunter{
+    content:url(../Images/hunter_icon.png);
+    cursor: pointer;
+    border: none;
+}
+#mage{
+    content:url(../Images/mage_icon.png);
+    cursor: pointer;
+    border: none;
+}
+#paladin{
+    content:url(../Images/paladin_icon.png);
+    cursor: pointer;
+    border: none;
+}
+#priest{
+    content:url(../Images/priest_icon.png);
+    cursor: pointer;
+    border: none;
+}
+#rogue{
+    content:url(../Images/rogue_icon.png);
+    cursor: pointer;
+    border: none;
+}
+#shaman{
+    content:url(../Images/shaman_icon.png);
+    cursor: pointer;
+    border: none;
+}
+#warlock{
+    content:url(../Images/warlock_icon.png);
+    cursor: pointer;
+    border: none;
+}
+#warrior{
+    content:url(../Images/warrior_icon.png);
+    cursor: pointer;
+    border: none;
+}
+
+.classes:hover{
+    transition: .5s ease;
+    backface-visibility: hidden;
+    opacity: 0.3;
+}

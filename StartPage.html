@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+
+<head>
+        <title>Hearthstone Wiki</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="Site for all Hearthstone lovers">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="keywords" content="Hearthstone, HS, Card, Game, Board">
+        <meta name="author" content="Davide Oggioni">
+        <link rel="stylesheet" href="css/hs.css">
+        <link rel="stylesheet" href="css/hs_nav.css">
+        <link rel="stylesheet" href="css/hs_fixed_menu.css">
+        <link rel="stylesheet" href="css/hs_table.css">
+        <script type="text/javascript" src="Scripts/hs_api.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+
+
+</head>
+
+<body>
+        <script>
+                cards();
+        </script>
+        <div class="flex-header">
+                <div class="image">
+                        <!--  <img src="Images/HS_Logo.png" alt="Hearthstone logo">-->
+                </div>
+                <div id="titleSite">
+                        HEARTHSTONE WIKI
+                </div>
+                <div id="search_div">
+                        <input type="text"  onkeyup = "searchFunction()" id="search" placeholder="Search">
+                </div>
+        </div>
+        <nav>
+                <div class="flex-characters">
+                        <div id="all" class="classes" onClick="cards()"> </div>
+                        <div id="druid" class="classes" onClick="cards('Druid')"> </div>
+                        <div id="hunter" class="classes" onClick="cards('Hunter')"></div>
+                        <div id="mage" class="classes" onClick="cards('Mage')"></div>
+                        <div id="paladin" class="classes" onClick="cards('Paladin')"></div>
+                        <div id="priest" class="classes" onClick="cards('Priest')"></div>
+                        <div id="rogue" class="classes" onClick="cards('Rogue')"></div>
+                        <div id="shaman" class="classes" onClick="cards('Shaman')"></div>
+                        <div id="warlock" class="classes" onClick="cards('Warlock')"></div>
+                        <div id="warrior" class="classes" onClick="cards('Warrior')"></div>
+                </div>
+        </nav>
+
+        <div class="fixed-filter-menu">
+                <img id="side_nav" src="Images/back_hs.png" alt="logo hs">
+                <form id="parameters" action="">
+                        <ul class="form-style">
+                                <li>
+                                        <input type="text" id="cardName" placeholder=" Name">
+                                        <select id="expansions" name="type">
+                                                <option value="All">All Updates</option>
+                                                <option value="UnGoro">Journey to Un'Goro</option>
+                                                <option value="Kobolds">Kobolds &amp Catacombs</option>
+                                                <option value="Gadgetzan">Mean Streets of Gadgetzan</option>
+                                                <option value="Explorers">The League of Explorers</option>
+                                                <option value="Classics">Classics</option>
+                                                <option value="Gods">Whispers of the Old Gods</option>
+                                                <option value="Frozen">Knights of the Frozen Throne</option>
+                                                <option value="Karazhan">One Night in Karazhan</option>
+                                                <option value="Naxxramas">Naxxramas</option>
+                                                <option value="Tournament">The Grand Tournament</option>
+                                                <option value="HOF">Hall of Fame</option>
+                                                <option value="GvG">Goblins vs Gnomes</option>
+                                                <option value="Blackrock">Blackrock Mountain</option>
+                                        </select>
+
+
+                                </li>
+                                <li>
+                                        <select id="class" name="classe">
+                                                <option value="all">Classes</option>
+                                                <option value="druid">Druid</option>
+                                                <option value="hunter">Hunter</option>
+                                                <option value="mage">Mage</option>
+                                                <option value="paladin">Paladin</option>
+                                                <option value="priest">Priest</option>
+                                                <option value="rogue">Rogue</option>
+                                                <option value="shaman">Shaman</option>
+                                                <option value="warlock">Warlock</option>
+                                                <option value="warrior">Warrior</option>
+                                        </select>
+                                        <select id="rarity" name="type">
+                                                <option value="All">All types</option>
+                                                <option value="Spell">Spells</option>
+                                                <option value="Weapon">Weapons</option>
+                                                <option value="Minion">Minions</option>
+                                                <option value="Hero">Heroes</option>
+                                        </select>
+
+                                </li>
+                                <li>
+
+                                        <input type="number" id="cost" min="0" placeholder="Cost">
+
+                                        <input type="submit" id="submit" value="Apply">
+                                </li>
+                        </ul>
+                </form>
+        </div>
+        
+        <div id="documentRows">
+</body>
+
+</html>
