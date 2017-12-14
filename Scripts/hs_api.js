@@ -75,7 +75,6 @@ function searchFunction() {
             }
         })
     });
-
     /*var input, filter, table, tr, td, i;
     input = document.getElementById("search");
     filter = input.value.toUpperCase();
@@ -91,5 +90,4 @@ function searchFunction() {
             tr[i].style.display = "none";
         }
     }*/
-
 }   
