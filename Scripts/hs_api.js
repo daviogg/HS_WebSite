@@ -13,12 +13,13 @@ function cards(classe) {
         }
     });
 }
-
 function outputDocument(data, classe) {
     var r = new Array();
     var j = -1, recordId;
-    console.log(classe);
-    r[++j] = '<table id="cardsMainTable"><thead><tr><th>Name</th><th>Set</th><th>Type</th><th>Class</th><th>Cost</th></tr></thead><tbody>';
+    var s = new Array();
+    var z = -1;
+    r[++j] = '<table id="cardsMainTable"><thead><tr id="trMain"><th>Name</th><th>Set</th><th>Type</th><th>Class</th><th>Cost</th></tr></thead><tbody>';
+
     for (var i in data) {
         var d = data[i];
         if (d.playerClass === classe || classe === undefined) {
@@ -47,19 +48,17 @@ function outputDocument(data, classe) {
         }
     }
     r[++j] = '</tbody></table>';
-    console.log(r.join(''));
+    //$('#tableBody').append(s.join(''));
     $('#documentRows').html(r.join(''));
 }
 function imageAppear(card) {
     //document.getElementById("img_"+card).style.visibility="visible";  
     $("#img_" + card).css('visibility', 'visible');
 }
-
 function imageDisappear(card) {
     //document.getElementById("img_"+card).style.visibility="hidden";
     $("#img_" + card).css('visibility', 'hidden');
 }
-
 function searchFunction() {
     $("table#cardsMainTable tr").each(function (i) {
         var find = false;
@@ -90,4 +89,76 @@ function searchFunction() {
             tr[i].style.display = "none";
         }
     }*/
-}   
+}
+
+function setFilter() {
+    var name = $("#cardName").val();
+    var expansion = $("#expansions option:selected").text();
+    var classes = $("#class option:selected").text();
+    var type = $("#cardTypes option:selected").text();
+    var cost = $("#cost").val();
+
+    var arr = [];
+
+    arr.push(name);
+    arr.push(expansion);
+    arr.push(type);
+    arr.push(classes);
+    arr.push(cost);
+
+    $("table#cardsMainTable tr").each(function (i) {
+        var find = false;
+        var bName = false, bExp = false, bClass = false, bType = false, bCost = false;
+        $("td", this).each(function (j) {
+            switch (j) {
+                case 0:
+                    //name
+                    if (arr[0] === undefined || ($(this).text().toUpperCase().indexOf(arr[j].toUpperCase())) > -1) {
+                        console.log("0")
+                        bName = true;
+                    }
+                    break;
+                case 1:
+                    //expansion
+                    if (arr[1] === $(this).text() || arr[1] === "All Updates") {
+                        console.log("1")
+                        bExp = true;
+                        
+                    }
+                    break;
+                case 2:
+                    //type
+                    if (arr[2] === $(this).text() || arr[2] === "All types") {
+                        console.log("2")
+                        bClass = true;
+                    }
+                    break;
+                case 3:
+                    //classes
+                    if (arr[3] === $(this).text() || arr[3] === "Classes") {
+                        console.log("3")
+                        bType = true;
+                    }
+                    break;
+                case 4:
+                    //cost
+                    if (arr[4].toString() === $(this).text() || arr[4].toString() === "") {
+                        console.log("4")
+                        bCost = true;
+                    }
+                    break;
+            }
+
+            
+        })
+        if ( bName && bExp && bClass && bType && bCost) {
+            $("#trMain").show();
+            $(this).show();
+
+        }else{
+            $(this).hide();
+        }
+    });
+
+
+}

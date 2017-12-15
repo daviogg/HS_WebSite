@@ -29,7 +29,7 @@
                         HEARTHSTONE WIKI
                 </div>
                 <div id="search_div">
-                        <input type="text"  onkeyup = "searchFunction()" id="search" placeholder="Search">
+                        <input type="text" onkeyup="searchFunction()" id="search" placeholder="Search">
                 </div>
         </div>
         <nav>
@@ -85,27 +85,28 @@
                                                 <option value="shaman">Shaman</option>
                                                 <option value="warlock">Warlock</option>
                                                 <option value="warrior">Warrior</option>
+                                                <option value="warrior">Neutral</option>
                                         </select>
-                                        <select id="rarity" name="type">
+                                        <select id="cardTypes" name="type">
                                                 <option value="All">All types</option>
-                                                <option value="Spell">Spells</option>
-                                                <option value="Weapon">Weapons</option>
-                                                <option value="Minion">Minions</option>
-                                                <option value="Hero">Heroes</option>
+                                                <option value="Spell">Spell</option>
+                                                <option value="Weapon">Weapon</option>
+                                                <option value="Minion">Minion</option>
+                                                <option value="Hero">Hero</option>
                                         </select>
 
                                 </li>
                                 <li>
-
                                         <input type="number" id="cost" min="0" placeholder="Cost">
-
-                                        <input type="submit" id="submit" value="Apply">
+                                        <input type="button" id="submit" onClick="setFilter()" value="Apply">
                                 </li>
                         </ul>
                 </form>
         </div>
-        
+
         <div id="documentRows">
+        </div>
+        
 </body>
 
 </html>
