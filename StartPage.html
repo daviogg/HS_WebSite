@@ -12,15 +12,16 @@
         <link rel="stylesheet" href="css/hs_nav.css">
         <link rel="stylesheet" href="css/hs_fixed_menu.css">
         <link rel="stylesheet" href="css/hs_table.css">
-        <script type="text/javascript" src="Scripts/hs_api.js"></script>
+        <!-- <script type="text/javascript" src="Scripts/hs_api.js"></script>-->
+        <script type="text/javascript" src="Scripts/Hs_card.ts"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+        <script type='text/javascript' src='Scripts/knockout-3.4.2.js'></script>
+        <script type='text/javascript' src='Scripts/knockout.mapping.min.js'></script>
 </head>
 
 <body>
-        <script>
-                cards();
-        </script>
+       
         <div class="flex-header">
                 <div class="image">
                         <!--  <img src="Images/HS_Logo.png" alt="Hearthstone logo">-->
@@ -29,22 +30,22 @@
                         HEARTHSTONE WIKI
                 </div>
                 <div id="search_div">
-                        <input type="text" onkeyup="searchFunction()" id="search" placeholder="Search">
+                        <input type="text" onkeyup="searchFunctionTs()" id="search" placeholder="Search">
                 </div>
         </div>
         <nav>
                 <div class="flex-characters">
-                        <div id="all" class="classes" onClick="cards()"></div>
+                        <div id="all" class="classes" onClick="cardsTs()"></div>
                         <!--<span class="tooltiptext">Tooltip text</span>-->
-                        <div id="druid" class="classes" onClick="cards('Druid')"> </div>
-                        <div id="hunter" class="classes" onClick="cards('Hunter')"></div>
-                        <div id="mage" class="classes" onClick="cards('Mage')"></div>
-                        <div id="paladin" class="classes" onClick="cards('Paladin')"></div>
-                        <div id="priest" class="classes" onClick="cards('Priest')"></div>
-                        <div id="rogue" class="classes" onClick="cards('Rogue')"></div>
-                        <div id="shaman" class="classes" onClick="cards('Shaman')"></div>
-                        <div id="warlock" class="classes" onClick="cards('Warlock')"></div>
-                        <div id="warrior" class="classes" onClick="cards('Warrior')"></div>
+                        <div id="druid" class="classes" onClick="cardsTs('Druid')"> </div>
+                        <div id="hunter" class="classes" onClick="cardsTs('Hunter')"></div>
+                        <div id="mage" class="classes" onClick="cardsTs('Mage')"></div>
+                        <div id="paladin" class="classes" onClick="cardsTs('Paladin')"></div>
+                        <div id="priest" class="classes" onClick="cardsTs('Priest')"></div>
+                        <div id="rogue" class="classes" onClick="cardsTs('Rogue')"></div>
+                        <div id="shaman" class="classes" onClick="cardsTs('Shaman')"></div>
+                        <div id="warlock" class="classes" onClick="cardsTs('Warlock')"></div>
+                        <div id="warrior" class="classes" onClick="cardsTs('Warrior')"></div>
                 </div>
         </nav>
 
@@ -98,7 +99,7 @@
                                 </li>
                                 <li>
                                         <input type="number" id="cost" min="0" placeholder="Cost">
-                                        <input type="button" id="submit" onClick="setFilter()" value="Apply">
+                                        <input type="button" id="submit" onClick="setFilterTs()" value="Apply">
                                 </li>
                         </ul>
                 </form>
@@ -106,7 +107,42 @@
 
         <div id="documentRows">
         </div>
-        
+
+        <table id="cardsMainTable">
+                <thead>
+                        <tr id="trmain">
+                                <th>Name</th>
+                                <th>Set</th>
+                                <th>Type</th>
+                                <th>Class</th>
+                                <th>Cost</th>
+                        </tr>
+                </thead>
+                <tbody data-bind="foreach:UsersList">
+                        <tr>
+                                <td data-bind="text:Name">
+                                        This will be the title
+                                </td>
+                                <td data-bind="text:CardSet">
+                                        This will be the author
+                                </td>
+                                <td data-bind="text:Type">
+                                        This will be the author
+                                </td>
+                                <td data-bind="text:PlayerClass">
+                                        This will be the author
+                                </td>
+                                <td data-bind="text:Cost">
+                                        This will be the author
+                                </td>
+                        </tr>
+                </tbody>
+        </table>
+        <script>
+                //cardsTs();
+                callModel();
+        </script>
+
 </body>
 
 </html>
