@@ -6,19 +6,32 @@ table {
     z-index: 1;
     background-color: rgb(250, 193, 107);
 }
-
-td, th {
+td, th{
     border: 2px solid #fa7508;
     text-align: center;
     font-size: 2vh;
     font-size: 1vw;
     padding: 8px;
 }
-
 th{
     background-color: orange;
 }
-
 tr:nth-child(even) {
     background-color: #f8efd4;
+}
+.tableSpace{
+   display: inline-block;
+    width: 75%;
+    margin-left: 23.5vw;
+}
+.helloCardsTs{
+    width: 15%;
+    margin-right: 6vw;
+    float: right;
+    position:fixed;
+}
+
+#cardsMainTable{
+    float: left;
+    width: 70%;
 }

@@ -70,6 +70,9 @@ body{
 }
 
 .imgCardClass{
-    width: 90%;
-    margin-left: 2vw;
+    width: 17%;
+    position: fixed;
+    margin-left: 3vw;
+    margin-left: 3vh;
 }
+

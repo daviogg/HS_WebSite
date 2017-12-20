@@ -90,7 +90,6 @@ function searchFunction() {
         }
     }*/
 }
-
 function setFilter() {
     var name = $("#cardName").val();
     var expansion = $("#expansions option:selected").text();
@@ -147,9 +146,7 @@ function setFilter() {
                         bCost = true;
                     }
                     break;
-            }
-
-            
+            } 
         })
         if ( bName && bExp && bClass && bType && bCost) {
             $("#trMain").show();

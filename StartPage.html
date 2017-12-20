@@ -21,7 +21,7 @@
 </head>
 
 <body>
-       
+
         <div class="flex-header">
                 <div class="image">
                         <!--  <img src="Images/HS_Logo.png" alt="Hearthstone logo">-->
@@ -35,17 +35,17 @@
         </div>
         <nav>
                 <div class="flex-characters">
-                        <div id="all" class="classes" onClick="cardsTs()"></div>
+                        <div id="all" class="classes" onClick="classFilterTs()"></div>
                         <!--<span class="tooltiptext">Tooltip text</span>-->
-                        <div id="druid" class="classes" onClick="cardsTs('Druid')"> </div>
-                        <div id="hunter" class="classes" onClick="cardsTs('Hunter')"></div>
-                        <div id="mage" class="classes" onClick="cardsTs('Mage')"></div>
-                        <div id="paladin" class="classes" onClick="cardsTs('Paladin')"></div>
-                        <div id="priest" class="classes" onClick="cardsTs('Priest')"></div>
-                        <div id="rogue" class="classes" onClick="cardsTs('Rogue')"></div>
-                        <div id="shaman" class="classes" onClick="cardsTs('Shaman')"></div>
-                        <div id="warlock" class="classes" onClick="cardsTs('Warlock')"></div>
-                        <div id="warrior" class="classes" onClick="cardsTs('Warrior')"></div>
+                        <div id="druid" class="classes" onClick="classFilterTs('Druid')"> </div>
+                        <div id="hunter" class="classes" onClick="classFilterTs('Hunter')"></div>
+                        <div id="mage" class="classes" onClick="classFilterTs('Mage')"></div>
+                        <div id="paladin" class="classes" onClick="classFilterTs('Paladin')"></div>
+                        <div id="priest" class="classes" onClick="classFilterTs('Priest')"></div>
+                        <div id="rogue" class="classes" onClick="classFilterTs('Rogue')"></div>
+                        <div id="shaman" class="classes" onClick="classFilterTs('Shaman')"></div>
+                        <div id="warlock" class="classes" onClick="classFilterTs('Warlock')"></div>
+                        <div id="warrior" class="classes" onClick="classFilterTs('Warrior')"></div>
                 </div>
         </nav>
 
@@ -61,7 +61,7 @@
                                                 <option value="Kobolds">Kobolds &amp Catacombs</option>
                                                 <option value="Gadgetzan">Mean Streets of Gadgetzan</option>
                                                 <option value="Explorers">The League of Explorers</option>
-                                                <option value="Classics">Classics</option>
+                                                <option value="Classic">Classic</option>
                                                 <option value="Gods">Whispers of the Old Gods</option>
                                                 <option value="Frozen">Knights of the Frozen Throne</option>
                                                 <option value="Karazhan">One Night in Karazhan</option>
@@ -107,37 +107,42 @@
 
         <div id="documentRows">
         </div>
+        <div class="tableSpace">
+                <table id="cardsMainTable">
+                        <thead>
+                                <tr id="trMain">
+                                        <th>Name</th>
+                                        <th>Set</th>
+                                        <th>Type</th>
+                                        <th>Class</th>
+                                        <th>Cost</th>
+                                </tr>
+                        </thead>
+                        <tbody data-bind="foreach:UsersList">
+                                <tr>
+                                        <td data-bind="text:Name, event:{mouseover: imageAppearBind , mouseout: imageDisappearBind}">
+                                                This will be the title
+                                        </td>
+                                        <td data-bind="text:CardSet">
+                                                This will be the author
+                                        </td>
+                                        <td data-bind="text:Type">
+                                                This will be the author
+                                        </td>
+                                        <td data-bind="text:PlayerClass">
+                                                This will be the author
+                                        </td>
+                                        <td data-bind="text:Cost">
+                                                This will be the author
+                                        </td>
+                                </tr>
+                        </tbody>
+                </table>
+                <span class ="helloCardsTs" data-bind="foreach:UsersList">
+                        <img  data-bind="attr:{ src: Image, id:ID}" class="imgCardClass" style="visibility:hidden;"></img>
+                </span>
+        </div>
 
-        <table id="cardsMainTable">
-                <thead>
-                        <tr id="trmain">
-                                <th>Name</th>
-                                <th>Set</th>
-                                <th>Type</th>
-                                <th>Class</th>
-                                <th>Cost</th>
-                        </tr>
-                </thead>
-                <tbody data-bind="foreach:UsersList">
-                        <tr>
-                                <td data-bind="text:Name">
-                                        This will be the title
-                                </td>
-                                <td data-bind="text:CardSet">
-                                        This will be the author
-                                </td>
-                                <td data-bind="text:Type">
-                                        This will be the author
-                                </td>
-                                <td data-bind="text:PlayerClass">
-                                        This will be the author
-                                </td>
-                                <td data-bind="text:Cost">
-                                        This will be the author
-                                </td>
-                        </tr>
-                </tbody>
-        </table>
         <script>
                 //cardsTs();
                 callModel();
