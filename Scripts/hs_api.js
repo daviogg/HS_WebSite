@@ -48,15 +48,12 @@ function outputDocument(data, classe) {
         }
     }
     r[++j] = '</tbody></table>';
-    //$('#tableBody').append(s.join(''));
     $('#documentRows').html(r.join(''));
 }
 function imageAppear(card) {
-    //document.getElementById("img_"+card).style.visibility="visible";  
     $("#img_" + card).css('visibility', 'visible');
 }
 function imageDisappear(card) {
-    //document.getElementById("img_"+card).style.visibility="hidden";
     $("#img_" + card).css('visibility', 'hidden');
 }
 function searchFunction() {
@@ -66,7 +63,6 @@ function searchFunction() {
             if (($(this).text().toUpperCase().indexOf($("#search").val().toUpperCase())) > -1) {
                 find = true;
             }
-            /*console.log("".concat("row: ", i, ", col: ", j, ", value: ", $(this).text()));*/
             if (find) {
                 $(this).parent().show();
             } else {
@@ -74,21 +70,6 @@ function searchFunction() {
             }
         })
     });
-    /*var input, filter, table, tr, td, i;
-    input = document.getElementById("search");
-    filter = input.value.toUpperCase();
-    table = document.getElementById("cardsMainTable");
-    tr = table.getElementsByTagName("tr");
-    /*for (i = 0; i < tr.length; i++) {
-        console.log("numero di tr" + tr);
-        td = tr[i].getElementsByTagName("td");
-        console.log(td.length);
-        if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
-            tr[i].style.display = "";
-        } else {
-            tr[i].style.display = "none";
-        }
-    }*/
 }
 function setFilter() {
     var name = $("#cardName").val();

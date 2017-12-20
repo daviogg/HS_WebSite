@@ -5,8 +5,6 @@ function callModel() {
 function viewModel() {
     var self = this;
     self.UsersList = ko.observableArray([]);
-
-    //self.CardListKo = ko.observableArray([]);
     self.GetUsers = function () {
         $.ajax({
             type: "GET",
@@ -40,12 +38,10 @@ function ViewModelDetail(data) {
         imageDisappearTs(data.cardId);
     }
 }
-function imageAppearTs(card) {
-    //document.getElementById("img_"+card).style.visibility="visible";  
+function imageAppearTs(card) {  
     $("#"+card).css('visibility', 'visible');
 }
 function imageDisappearTs(card) {
-    //document.getElementById("img_"+card).style.visibility="hidden";
     $("#"+card).css('visibility', 'hidden');
 }
 function searchFunctionTs() {
@@ -87,7 +83,6 @@ function classFilterTs(classe){
             $(this).hide();
         }
     });
-
 }
 function setFilterTs() {
     var name = $("#cardName").val();
@@ -146,8 +141,7 @@ function setFilterTs() {
             $(this).show();
 
         } else {
-            $(this).hide();
-            
+            $(this).hide();    
         }
     });
 }
